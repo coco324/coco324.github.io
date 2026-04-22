@@ -52,17 +52,12 @@ export default defineComponent({
         Je crée des expériences numériques innovantes et élégantes.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="#" class="flex items-center gap-3 px-8 py-4 bg-[#2ecc71] text-black text-lg font-bold rounded-lg hover:opacity-90 transition-opacity">
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-          </svg>
-          Télécharger mon CV
+        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-8 py-4 bg-[#2ecc71] text-black text-lg font-bold rounded-lg hover:opacity-90 transition-opacity">
+          Mon CV
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
         </a>
         <a href="#projets" class="px-8 py-4 border border-[#2ecc71] text-[#2ecc71] text-lg font-bold rounded-lg hover:bg-[#2ecc71]/10 transition-colors">
-          Voir mes projets
-        </a>
-        <a href="#contact" class="px-8 py-4 border border-[#333] text-[#bbb] text-lg font-bold rounded-lg hover:bg-white/5 transition-colors">
-          Me contacter
+          Voir mes projets.
         </a>
       </div>
       <GitHubContributions username="coco324" theme="dark" />
