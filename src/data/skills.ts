@@ -1,4 +1,8 @@
-import type { Skill } from './types'
+export interface Skill {
+  title: string
+  sub: string
+  icon: string
+}
 
 export const skills: Skill[] = [
   {

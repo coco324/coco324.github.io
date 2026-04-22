@@ -60,7 +60,7 @@ export default defineComponent({
           Voir mes projets.
         </a>
       </div>
-      <GitHubContributions username="coco324" theme="dark" />
+      <div class="pt-10"><GitHubContributions username="coco324" theme="dark" /></div>
       <div class="mt-20 text-[#333]">
         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -94,7 +94,7 @@ export default defineComponent({
 
       <!-- Skills -->
       <div class="grid md:grid-cols-3 gap-4">
-        <div v-for="skill in skills" :key="skill.title" class="bg-[#161616] border border-[#262626] rounded-xl p-8">
+        <div v-for="skill in skills" :key="skill.title" class="bg-[#161616] border border-[#262626] rounded-xl p-8 hover:border-[#2ecc71]/40 transition-colors">
           <span class="block mb-3 text-[#2ecc71]" v-html="skill.icon" />
           <h4 class="text-white font-bold text-sm mb-1">{{ skill.title }}</h4>
           <p class="text-[#666] text-xs">{{ skill.sub }}</p>
@@ -135,6 +135,7 @@ export default defineComponent({
           v-for="c in contacts"
           :key="c.label"
           :href="c.href"
+          target="blank"
           class="bg-[#161616] border border-[#262626] rounded-xl p-8 flex flex-col items-center gap-3 hover:border-[#2ecc71]/40 transition-colors"
         >
           <span v-html="c.icon" />

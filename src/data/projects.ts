@@ -2,19 +2,19 @@ import type { Project } from '../components/ProjectCard.vue'
 
 export const projects: Project[] = [
   {
-    title: 'Application E-commerce',
-    description: 'Plateforme de vente en ligne complète avec panier, système de paiement et gestion des stocks.',
+    title: 'Vibz',
+    description: "Vibz est une application web moderne qui vous permet de découvrir et d'écouter le Top 20 des musiques les plus populaires de la semaine sur youtube.",
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
-    tags: ['React', 'Node.js', 'MongoDB'],
-    codeUrl: '#',
-    demoUrl: '#',
+    tags: ['Vue', 'Node.js', 'Sql','Tailwind'],
+    codeUrl: 'https://github.com/AdrienMttn/music_charts',
+    demoUrl: 'https://vibz-music.netlify.app/',
   },
   {
-    title: 'Dashboard Analytics',
-    description: 'Tableau de bord interactif pour visualiser des données en temps réel avec graphiques et statistiques.',
+    title: 'BlackJack',
+    description: 'Création d’une application de BlackJack offrant la possibilité de miser avec des jetons virtuels, d’ouvrir un compte utilisateur et d’accéder à un classement des joueurs.',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
     tags: ['TypeScript', 'Chart.js', 'Tailwind'],
-    codeUrl: '#',
+    codeUrl: 'https://github.com/coco324/blackJack',
     demoUrl: '#',
   },
   {

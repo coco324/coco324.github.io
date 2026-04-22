@@ -2,7 +2,7 @@
   <div
     :class="[
       'relative inline-block min-w-180 rounded-md border p-4 text-xs font-sans',
-      isDark ? 'bg-[#0d1117] border-[#30363d] text-[#c9d1d9]' : 'bg-white border-[#d0d7de] text-[#1f2328]'
+      isDark ? 'bg-[#0d0d0d] border-[#30363d] text-[#c9d1d9]' : 'bg-white border-[#d0d7de] text-[#1f2328]'
     ]"
   >
     <div class="mb-3">

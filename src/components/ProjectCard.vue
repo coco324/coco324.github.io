@@ -22,7 +22,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="bg-[#161616] border border-[#262626] rounded-xl overflow-hidden flex flex-col h-full hover:border-[#2ecc71]/40 transition-colors duration-300">
+  <div class="bg-[#0d0d0d] border border-[#262626] rounded-xl overflow-hidden flex flex-col h-full hover:border-[#2ecc71]/40 transition-colors duration-300">
     <div class="h-44 overflow-hidden relative group">
       <img 
         :src="project.image" 
