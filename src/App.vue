@@ -138,7 +138,7 @@ export default defineComponent({
           target="blank"
           class="bg-[#161616] border border-[#262626] rounded-xl p-8 flex flex-col items-center gap-3 hover:border-[#2ecc71]/40 transition-colors"
         >
-          <span v-html="c.icon" />
+          <span v-html="c.icon"> </span>
           <strong class="text-white text-sm font-bold">{{ c.label }}</strong>
           <span class="text-[#666] text-xs">{{ c.value }}</span>
         </a>
@@ -147,7 +147,7 @@ export default defineComponent({
 
     <!-- FOOTER -->
     <footer class="border-t border-[#1a1a1a] py-7 text-center text-xs text-[#444]">
-      © 2026 Prénom Nom. Tous droits réservés.
+      © 2026 Corantin Antony. Tous droits réservés.
     </footer>
 
     </div>

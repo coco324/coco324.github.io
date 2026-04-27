@@ -18,10 +18,10 @@ export const projects: Project[] = [
     demoUrl: '#',
   },
   {
-    title: 'Gestionnaire de Tâches',
-    description: "Application de productivité permettant de créer, organiser et suivre des tâches avec système de notifications.",
+    title: 'GitlabEventsHook',
+    description: "Ce backend a pour but d'intégrer des feature IA au seins du gitlab entreprise",
     image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
-    tags: ['React', 'Firebase', 'PWA'],
+    tags: ['kubernetes', 'docker', 'java','kafka'],
     codeUrl: '#',
     demoUrl: '#',
   },
