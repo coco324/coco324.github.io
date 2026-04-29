@@ -8,11 +8,13 @@ import { projects } from './data/projects'
 import { education } from './data/education'
 import { skills } from './data/skills'
 import { contacts } from './data/contacts'
+import { favorisProject } from './data/favorisProject'
+import ProjectCarousel from './components/ProjectCarousel.vue'
 
 export default defineComponent({
   name: 'App',
 
-  components: { ProjectCard, EducationTimeline, GitHubContributions },
+  components: { ProjectCard, EducationTimeline, GitHubContributions, ProjectCarousel },
 
   data() {
     return {
@@ -21,6 +23,7 @@ export default defineComponent({
       education,
       skills,
       contacts,
+      favorisProject,
     }
   },
 })
@@ -95,7 +98,7 @@ export default defineComponent({
       <!-- Skills -->
       <div class="grid md:grid-cols-3 gap-4">
         <div v-for="skill in skills" :key="skill.title" class="bg-[#161616] border border-[#262626] rounded-xl p-8 hover:border-[#2ecc71]/40 transition-colors">
-          <span class="block mb-3 text-[#2ecc71]" v-html="skill.icon" />
+          <span class="block mb-3 text-[#2ecc71]" v-html="skill.icon"></span>
           <h4 class="text-white font-bold text-sm mb-1">{{ skill.title }}</h4>
           <p class="text-[#666] text-xs">{{ skill.sub }}</p>
         </div>
@@ -112,14 +115,25 @@ export default defineComponent({
       <EducationTimeline :items="education" />
     </section>
 
-    <!-- PROJETS -->
+    <!-- PROJETS favoris -->
     <section id="projets" class="max-w-5xl mx-auto px-6 py-24">
       <h2 class="text-4xl font-extrabold text-center tracking-tight mb-14">
-        Mes <span class="text-[#2ecc71]">projets</span>
+        Mes <span class="text-[#2ecc71]">projets favoris</span>
       </h2>
-      <div class="grid md:grid-cols-3 gap-5">
-        <ProjectCard v-for="project in projects" :key="project.title" :project="project" />
+      <div class="flex flex-wrap justify-center gap-5">
+        <div v-for="project in favorisProject" :key="project.title" class="w-full sm:w-1/2 md:w-1/3">
+          <ProjectCard :project="project" />
+        </div>
       </div>
+    </section>
+
+
+    <!-- PROJETS -->
+    <section id="projets" class="max-w-5xl mx-auto px-6 ">
+      <h2 class="text-4xl font-extrabold text-center tracking-tight">
+        Tout mes <span class="text-[#2ecc71]">projets</span>
+      </h2>
+      <ProjectCarousel :projects="projects" />
     </section>
 
     <!-- CONTACT -->
