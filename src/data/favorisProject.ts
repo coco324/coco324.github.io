@@ -1,8 +1,10 @@
+import blackjack_acceuil from '../assets/img/BlackJack_acceuil.jpg'
+
 export const favorisProject = [
   {
     title: 'BlackJack',
     description: 'Création d’une application de BlackJack offrant la possibilité de miser avec des jetons virtuels, d’ouvrir un compte utilisateur et d’accéder à un classement des joueurs.',
-    image: '/BlackJack_acceuil.jpg',
+    image: blackjack_acceuil,
     tags: ['TypeScript', 'Chart.js', 'Tailwind'],
     codeUrl: 'https://github.com/coco324/blackJack',
     demoUrl: 'https://blackjack.alwaysdata.net/',

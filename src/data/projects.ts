@@ -7,6 +7,8 @@ import projetJeux from '../assets/img/ProjetJeux.png'
 import ProjetCalcul from '../assets/img/ProjetCalcul.jpg'
 import Cannrd from '../assets/img/Cannard.png'
 import zenGarden from '../assets/img/zengarden.jpg'
+import snoitome from '../assets/img/snoitome.jpg'
+import portfolio from '../assets/img/portfolio.jpg'
 
 export const projects: Project[] = [
   {
@@ -84,9 +86,25 @@ export const projects: Project[] = [
   {
     title: 'CSS Zen Garden',
     description: "Le site CSS Zen Garden présente un fichier HTML fixe dont l’apparence est entièrement transformée grâce au CSS. L’objectif est de montrer comment une simple feuille de style peut modifier complètement l’ambiance du site sans toucher au contenu.",
-    image: zenGarden,
+    image: zenGarden  ,
     tags: ['css', 'design', 'web'],
     codeUrl: 'https://github.com/coco324/ZenGarden',
+    demoUrl: '#',
+  },
+  {
+    title: 'snoitome',
+    description: "Conception et réalisation complète d'un site vitrine promotionnel pour un produit technologique fictif. L'objectif était de présenter les fonctionnalités d'une boisson fictive.",
+    image: snoitome,
+    tags: ['HTML', 'CSS', 'Design'],
+    codeUrl: 'https://github.com/coco324/snoitome',
+    demoUrl: '#',
+  },
+  {
+    title: 'portfolio',
+    description: "J'ai réalisé un portfolio pour synthétiser mon parcours et démontrer la mise en pratique de mes compétences lors de mon examen.",
+    image: portfolio,
+    tags: ['Vue.js', 'TypeScript', 'Tailwind CSS'],
+    codeUrl: 'https://github.com/coco324/coco324.github.io',
     demoUrl: '#',
   }
 ]
