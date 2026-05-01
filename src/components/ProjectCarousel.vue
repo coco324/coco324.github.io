@@ -22,7 +22,7 @@ let jumpLocked = false
 // ── Clone list for infinite loop ──────────────────────────────────────────────
 const carouselProjects = computed(() => {
   if (props.projects.length <= 1) return props.projects
-  return [props.projects.at(-1)!, ...props.projects, props.projects[0]!]
+  return [props.projects[props.projects.length - 1]!, ...props.projects, props.projects[0]!]
 })
 
 // ── Refs ──────────────────────────────────────────────────────────────────────
