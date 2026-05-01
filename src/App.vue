@@ -10,11 +10,13 @@ import { skills } from './data/skills'
 import { contacts } from './data/contacts'
 import { favorisProject } from './data/favorisProject'
 import ProjectCarousel from './components/ProjectCarousel.vue'
+import ProjectModal from './components/ProjectModal.vue'
+import { getProjectModalContent } from './data/projectModal'
 
 export default defineComponent({
   name: 'App',
 
-  components: { ProjectCard, EducationTimeline, GitHubContributions, ProjectCarousel },
+  components: { ProjectCard, EducationTimeline, GitHubContributions, ProjectCarousel, ProjectModal },
 
   data() {
     return {
@@ -24,6 +26,25 @@ export default defineComponent({
       skills,
       contacts,
       favorisProject,
+      modalOpen: false,
+      modalProject: null,
+    }
+  },
+  computed: {
+    modalContent() {
+      return this.modalProject ? getProjectModalContent(this.modalProject) : null
+    },
+  },
+  methods: {
+    openFavorite(project: any, ev: MouseEvent) {
+      const target = ev.target as HTMLElement | null
+      if (target && typeof target.closest === 'function' && target.closest('a')) return
+      this.modalProject = project
+      this.modalOpen = true
+    },
+    closeModal() {
+      this.modalOpen = false
+      this.modalProject = null
     }
   },
 })
@@ -120,11 +141,14 @@ export default defineComponent({
       <h2 class="text-4xl font-extrabold text-center tracking-tight mb-14">
         Mes <span class="text-[#2ecc71]">projets favoris</span>
       </h2>
-      <div class="flex flex-wrap justify-center gap-5">
-        <div v-for="project in favorisProject" :key="project.title" class="w-full sm:w-1/2 md:w-1/3">
-          <ProjectCard :project="project" />
+      <div class="mx-auto grid max-w-4xl gap-5 md:grid-cols-2 place-items-center">
+        <div v-for="project in favorisProject" :key="project.title" class="h-full w-full max-w-md">
+          <div class="h-full cursor-pointer" @click="openFavorite(project, $event)">
+            <ProjectCard :project="project" />
+          </div>
         </div>
       </div>
+      <ProjectModal v-if="modalOpen" :content="modalContent" @close="closeModal" />
     </section>
 
 

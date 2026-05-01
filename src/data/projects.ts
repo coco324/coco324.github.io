@@ -24,8 +24,8 @@ export const projects: Project[] = [
     description: "Dans le cadre de l'améliorations de la gestion informatique, j'ai travailler sue le déploiement et l'administration de l'outil GLPI (Gestionnaire Libre de Parc Informatique). L'objectif était de centraliser l'inventaire matérielle et logicielle tout en offrant un système de tickets pour le support utilisateur. ",
     image: Glpi,
     tags: ['GLPI', 'Inventaire', 'Support IT'], 
-    codeUrl: '#',
-    demoUrl: '#',
+    codeUrl: '',
+    demoUrl: '',
   },
   {
     title: 'Application- Sport SIO',
@@ -33,15 +33,15 @@ export const projects: Project[] = [
     image: sportSio,
     tags: ['C#', 'Windows Forms', 'Gestion de données'],
     codeUrl: 'https://github.com/coco324/AppliSportSio',
-    demoUrl: '#',
+    demoUrl: '',
   },
   {
     title: 'Stage développeur web',
     description: "Développement d'une application web avec Angular (interne a Michelin) qui a pour but d'aider les développeurs au quotidien notamment en leurs proposant des modèles ou de la documentation.",
     image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80',
     tags: ['Angular', 'Web', 'Typescript'],
-    codeUrl: '#',
-    demoUrl: '#',
+    codeUrl: '',
+    demoUrl: '',
   },
   {
     title: 'BlackJack',
@@ -49,15 +49,15 @@ export const projects: Project[] = [
     image: blackJackImage,
     tags: ['TypeScript', 'Chart.js', 'Tailwind'],
     codeUrl: 'https://github.com/coco324/blackJack',
-    demoUrl: '#',
+    demoUrl: '',
   },
   {
     title: 'GitlabEventsHook',
     description: "Ce backend a pour but d'intégrer des feature IA au seins du gitlab entreprise",
     image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
     tags: ['kubernetes', 'docker', 'java','kafka'],
-    codeUrl: '#',
-    demoUrl: '#',
+    codeUrl: '',
+    demoUrl: '',
   },
   {
     title: 'AP Maintenance corrective et/ou évolution de jeux',
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     image: projetJeux,
     tags: ['C#', 'Windows Forms', 'Jeux classiques'],
     codeUrl: 'https://github.com/coco324/ProjetJeux',
-    demoUrl: '#',
+    demoUrl: '',
   },
   {
     title: 'Logiciel Apprentissage calcul',
@@ -73,15 +73,15 @@ export const projects: Project[] = [
     image: ProjetCalcul,
     tags: ['C#', 'Windows Forms', 'Apprentissage'],
     codeUrl: 'https://github.com/coco324/CalculEnfant',
-    demoUrl: '#',
+    demoUrl: '',
   },
   {
     title: 'Journal - Canard Connecté ',
     description: "Chaque semaine au début de notre année, un groupe de 4 personne présenté des informations d'actualité sur l'informatique en général. On pouvais parler du sujet de notre choix.",
     image: Cannrd,
     tags: ['veille technologique', 'actualité', 'communication'],
-    codeUrl: '#',
-    demoUrl: '#',
+    codeUrl: '',
+    demoUrl: '',
   },
   {
     title: 'CSS Zen Garden',
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     image: zenGarden  ,
     tags: ['css', 'design', 'web'],
     codeUrl: 'https://github.com/coco324/ZenGarden',
-    demoUrl: '#',
+    demoUrl: '',
   },
   {
     title: 'snoitome',
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     image: snoitome,
     tags: ['HTML', 'CSS', 'Design'],
     codeUrl: 'https://github.com/coco324/snoitome',
-    demoUrl: '#',
+    demoUrl: '',
   },
   {
     title: 'portfolio',
@@ -105,6 +105,6 @@ export const projects: Project[] = [
     image: portfolio,
     tags: ['Vue.js', 'TypeScript', 'Tailwind CSS'],
     codeUrl: 'https://github.com/coco324/coco324.github.io',
-    demoUrl: '#',
+    demoUrl: 'https://coco324.github.io/',
   }
 ]

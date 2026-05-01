@@ -22,17 +22,18 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="bg-[#0d0d0d] border border-[#262626] rounded-xl overflow-hidden flex flex-col h-full hover:border-[#2ecc71]/40 transition-colors duration-300">
+  <div class="bg-[#0d0d0d] border border-[#262626] rounded-xl overflow-hidden flex flex-col h-full hover:border-[#2ecc71]/40 transition-colors duration-300" style="-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; backface-visibility:hidden;">
     <div class="h-44 overflow-hidden relative group">
       <img 
         :src="project.image" 
         :alt="project.title" 
         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+        style="transform:translateZ(0); backface-visibility:hidden;"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent opacity-60"></div>
+      <div class="absolute inset-0 bg-linear-to-t from-[#161616] to-transparent opacity-60"></div>
     </div>
 
-    <div class="p-5 flex flex-col flex-1 gap-3">
+    <div class="p-5 flex flex-col flex-1 gap-3" style="transform:translateZ(0); backface-visibility:hidden;">
       <h3 class="text-white font-bold text-lg tracking-tight">{{ project.title }}</h3>
       <p class="text-sm text-[#888] leading-relaxed line-clamp-3">{{ project.description }}</p>
 

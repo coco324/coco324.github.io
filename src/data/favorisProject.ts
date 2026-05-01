@@ -14,7 +14,7 @@ export const favorisProject = [
     description: "Ce backend a pour but d'intégrer des feature IA au seins du gitlab entreprise",
     image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
     tags: ['kubernetes', 'docker', 'java','kafka'],
-    codeUrl: '#',
-    demoUrl: '#',
+    codeUrl: '',
+    demoUrl: '',
   },
 ]
