@@ -9,7 +9,7 @@ export const education: Education[] = [
     tags: ['Développement d’applications', 'Programmation web', 'Gestion de projet', 'Bases de données'],
   },
   {
-    period: '2023 - 2024',
+    period: '2021 - 2024',
     degree: 'Bac professionnel Systèmes Numériques (SN) option RISC',
     school: 'Lycée des métiers Gergovie',
     description: 'Formation centrée sur les réseaux, la maintenance informatique et le déploiement d’équipements connectés',
