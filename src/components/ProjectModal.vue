@@ -56,7 +56,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
             </button>
           </header>
 
-          <div class="modal-body grid grid-cols-1 lg:grid-cols-[0.9fr_1.7fr] max-h-[82vh] overflow-hidden">
+          <div class="modal-body grid grid-cols-1 lg:grid-cols-[0.9fr_1.7fr] h-[85vh] overflow-hidden">
             <div class="modal-left relative flex flex-col overflow-hidden border-r border-[#2ecc71]/10">
               <div class="relative h-52 lg:h-64 overflow-hidden shrink-0">
                 <img
@@ -106,7 +106,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
               </div>
             </div>
 
-            <div class="modal-right overflow-y-auto p-6 sm:p-8 space-y-5 scrollbar-thin">
+            <div class="modal-right overflow-y-auto overflow-x-hidden p-6 sm:p-8 space-y-6 scrollbar-thin flex-1">
               <section class="reveal-item content-block" style="--delay: 0.1s">
                 <div class="section-label">
                   <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">01 — contexte</span>
@@ -144,9 +144,97 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
                 </div>
               </section>
 
-              <section class="reveal-item content-block" style="--delay: 0.25s">
+              <section v-if="content.title === 'GitlabEventsHook'" class="reveal-item content-block" style="--delay: 0.25s">
                 <div class="section-label">
-                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">04 — difficultés</span>
+                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">04 — architecture</span>
+                  <div class="section-line"></div>
+                </div>
+                <div class="mt-6 space-y-6">
+                  <!-- Before Architecture -->
+                  <div>
+                    <p class="font-mono text-[9px] text-red-400/70 uppercase mb-3">❌ Avant - Webhooks directs</p>
+                    <svg viewBox="0 0 500 80" class="w-full h-auto">
+                      <!-- GitLab -->
+                      <rect x="20" y="10" width="80" height="60" rx="4" fill="#1f2937" stroke="#ff6b6b" stroke-width="2"/>
+                      <text x="60" y="45" text-anchor="middle" class="text-[12px] fill-white font-bold" font-family="monospace">GitLab</text>
+                      
+                      <!-- Arrow -->
+                      <path d="M 110 40 L 130 40" stroke="#ff6b6b" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+                      
+                      <!-- Webhooks -->
+                      <rect x="140" y="10" width="100" height="60" rx="4" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+                      <text x="190" y="35" text-anchor="middle" class="text-[11px] fill-white font-bold" font-family="monospace">Webhooks</text>
+                      <text x="190" y="55" text-anchor="middle" class="text-[9px] fill-orange-300" font-family="monospace">HTTPS</text>
+                      
+                      <!-- Arrow -->
+                      <path d="M 250 40 L 270 40" stroke="#ff6b6b" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+                      
+                      <!-- Backend -->
+                      <rect x="280" y="10" width="80" height="60" rx="4" fill="#1e3a1f" stroke="#ff6b6b" stroke-width="2"/>
+                      <text x="320" y="45" text-anchor="middle" class="text-[12px] fill-white font-bold" font-family="monospace">Backend</text>
+                      
+                      <!-- Marker -->
+                      <defs>
+                        <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                          <path d="M0,0 L0,6 L9,3 z" fill="#ff6b6b"/>
+                        </marker>
+                      </defs>
+                    </svg>
+                    <p class="font-mono text-[9px] text-red-400/60 mt-2">⚠ Couplage direct, surcharge réseau, faible scalabilité</p>
+                  </div>
+                  
+                  <!-- After Architecture -->
+                  <div>
+                    <p class="font-mono text-[9px] text-[#2ecc71]/70 uppercase mb-3">✓ Après - Architecture Kafka</p>
+                    <svg viewBox="0 0 600 100" class="w-full h-auto">
+                      <!-- GitLab -->
+                      <rect x="10" y="20" width="70" height="60" rx="4" fill="#1f2937" stroke="#2ecc71" stroke-width="2"/>
+                      <text x="45" y="55" text-anchor="middle" class="text-[11px] fill-white font-bold" font-family="monospace">GitLab</text>
+                      
+                      <!-- Arrow -->
+                      <path d="M 90 50 L 105 50" stroke="#2ecc71" stroke-width="2" fill="none" marker-end="url(#arrowgreen)"/>
+                      
+                      <!-- Filehooks -->
+                      <rect x="115" y="20" width="70" height="60" rx="4" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+                      <text x="150" y="55" text-anchor="middle" class="text-[11px] fill-white font-bold" font-family="monospace">Filehooks</text>
+                      
+                      <!-- Arrow -->
+                      <path d="M 195 50 L 210 50" stroke="#2ecc71" stroke-width="2" fill="none" marker-end="url(#arrowgreen)"/>
+                      
+                      <!-- OpenTelemetry -->
+                      <rect x="220" y="20" width="90" height="60" rx="4" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+                      <text x="265" y="55" text-anchor="middle" class="text-[10px] fill-white font-bold" font-family="monospace">OpenTelemetry</text>
+                      
+                      <!-- Arrow -->
+                      <path d="M 320 50 L 335 50" stroke="#2ecc71" stroke-width="2" fill="none" marker-end="url(#arrowgreen)"/>
+                      
+                      <!-- Kafka -->
+                      <rect x="345" y="20" width="70" height="60" rx="4" fill="#b45309" stroke="#fbbf24" stroke-width="2"/>
+                      <text x="380" y="55" text-anchor="middle" class="text-[11px] fill-white font-bold" font-family="monospace">Kafka</text>
+                      
+                      <!-- Arrow -->
+                      <path d="M 425 50 L 440 50" stroke="#2ecc71" stroke-width="2" fill="none" marker-end="url(#arrowgreen)"/>
+                      
+                      <!-- Backend IA -->
+                      <rect x="450" y="20" width="80" height="60" rx="4" fill="#1e3a1f" stroke="#2ecc71" stroke-width="2"/>
+                      <text x="490" y="50" text-anchor="middle" class="text-[11px] fill-white font-bold" font-family="monospace">Backend</text>
+                      <text x="490" y="65" text-anchor="middle" class="text-[9px] fill-[#7dffab]" font-family="monospace">IA</text>
+                      
+                      <!-- Marker -->
+                      <defs>
+                        <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                          <path d="M0,0 L0,6 L9,3 z" fill="#2ecc71"/>
+                        </marker>
+                      </defs>
+                    </svg>
+                    <p class="font-mono text-[9px] text-[#2ecc71]/60 mt-2">✨ Découplé, scalable, événementiel</p>
+                  </div>
+                </div>
+              </section>
+
+              <section class="reveal-item content-block" style="--delay: 0.3s">
+                <div class="section-label">
+                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">{{ content.title === 'GitlabEventsHook' ? '05 — difficultés' : '04 — difficultés' }}</span>
                   <div class="section-line"></div>
                 </div>
                 <p class="font-mono text-sm leading-7 text-white/65 mt-3">
@@ -156,17 +244,21 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
 
               <section class="reveal-item content-block" style="--delay: 0.3s">
                 <div class="section-label">
-                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">05 — compétences</span>
+                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">{{ content.title === 'GitlabEventsHook' ? '06 — compétences' : '05 — compétences' }}</span>
                   <div class="section-line"></div>
                 </div>
-                <div class="grid grid-cols-2 gap-2 mt-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
                   <div
                     v-for="comp in content.competencies"
                     :key="comp.code"
-                    class="comp-card rounded-xl border border-white/8 bg-white/2 p-3.5 flex gap-3 items-start"
+                    class="comp-card group rounded-lg border border-[#2ecc71]/20 bg-gradient-to-br from-[#2ecc71]/8 to-[#2ecc71]/2 p-4 flex flex-col gap-2 hover:shadow-md"
                   >
-                    <span class="font-mono text-xs font-bold text-[#2ecc71] shrink-0 mt-0.5">{{ comp.code }}</span>
-                    <span class="font-mono text-xs text-white/55 leading-5">{{ comp.label }}</span>
+                    <div class="flex items-start gap-2.5">
+                      <div v-if="comp.code" class="flex-shrink-0">
+                        <span class="font-mono text-xs font-bold text-[#2ecc71] bg-[#2ecc71]/15 px-2 py-1 rounded">{{ comp.code }}</span>
+                      </div>
+                      <span class="font-mono text-xs text-white/70 leading-5 flex-1">{{ comp.label }}</span>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -265,11 +357,22 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
 }
 
 .tech-card:hover,
-.comp-card:hover,
 .stat-cell:hover {
   transform: translateY(-2px);
   border-color: rgba(46, 204, 113, 0.25);
   background: rgba(255, 255, 255, 0.04);
+}
+
+.comp-card {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-color: rgba(46, 204, 113, 0.2);
+}
+
+.comp-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(46, 204, 113, 0.4);
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.12), rgba(46, 204, 113, 0.06));
+  box-shadow: 0 8px 24px rgba(46, 204, 113, 0.15);
 }
 
 .cta-btn {
