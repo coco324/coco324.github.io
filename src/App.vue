@@ -155,7 +155,7 @@ export default defineComponent({
     <!-- PROJETS -->
     <section id="projets" class="max-w-5xl mx-auto px-6 ">
       <h2 class="text-4xl font-extrabold text-center tracking-tight">
-        Tout mes <span class="text-[#2ecc71]">projets</span>
+        Touts mes <span class="text-[#2ecc71]">projets</span>
       </h2>
       <ProjectCarousel :projects="projects" />
     </section>
