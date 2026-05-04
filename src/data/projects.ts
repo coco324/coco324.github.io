@@ -89,7 +89,7 @@ export const projects: Project[] = [
     image: zenGarden  ,
     tags: ['css', 'design', 'web'],
     codeUrl: 'https://github.com/coco324/ZenGarden',
-    demoUrl: '',
+    demoUrl: 'https://coco324.github.io/ZenGarden/',
   },
   {
     title: 'snoitome',
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     image: snoitome,
     tags: ['HTML', 'CSS', 'Design'],
     codeUrl: 'https://github.com/coco324/snoitome',
-    demoUrl: '',
+    demoUrl: 'https://coco324.github.io/snoitome/',
   },
   {
     title: 'portfolio',
