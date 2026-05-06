@@ -55,9 +55,18 @@ export default defineComponent({
     <div class="relative z-10">
       <!-- NAV -->
       <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-4 bg-[#0d0d0d]/90 backdrop-blur border-b border-[#1e1e1e]">
-        <span class="font-extrabold text-lg tracking-tight">
-          C<span class="text-[#2ecc71]">A</span>
-        </span>
+        <div class="flex items-center gap-3">
+          <span class="font-extrabold text-lg tracking-tight">
+            C<span class="text-[#2ecc71]">A</span>
+          </span>
+          <button class="flex items-center gap-1.5 px-2 py-1.5 text-[#555] hover:text-[#2ecc71] transition-colors rounded" title="Augmenter la lisibilité du texte">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span class="text-xs hidden sm:inline">Lisibilité</span>
+          </button>
+        </div>
         <div class="hidden md:flex gap-8 text-sm text-[#aaa]">
           <a v-for="link in navLinks" :key="link.label" :href="link.href" class="hover:text-white ">
             {{ link.label }}
