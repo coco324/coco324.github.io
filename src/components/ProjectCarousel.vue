@@ -40,6 +40,14 @@ const cardScrollLeft = (i: number) => {
 const scrollToCard = (i: number, smooth = false) =>
   scrollContainer.value?.scrollTo({ left: cardScrollLeft(i), behavior: smooth ? 'smooth' : 'instant' })
 
+const updateLayoutAfterScroll = (delay = 0) => {
+  window.setTimeout(() => {
+    normalizeScroll(true)
+    updateLayout()
+    requestAnimationFrame(updateLayout)
+  }, delay)
+}
+
 const centeredIndex = () => {
   const c = scrollContainer.value
   if (!c || !cardElements.value.length) return 1
@@ -71,18 +79,42 @@ const updateLayout = () => {
   })
 }
 
-const normalizeScroll = () => {
+const normalizeScroll = (includeCenteredClones = false) => {
   const c = scrollContainer.value
   if (!c || props.projects.length <= 1 || jumpLocked) return
   const { scrollLeft, scrollWidth, clientWidth } = c
   const maxScroll = scrollWidth - clientWidth
   const total     = props.projects.length
-  if (scrollLeft <= 2) {
-    jumpLocked = true; scrollToCard(total)
-    requestAnimationFrame(() => { jumpLocked = false })
+
+  const activeIndex = centeredIndex()
+  if (includeCenteredClones && activeIndex === 0) {
+    jumpLocked = true
+    scrollToCard(total)
+    requestAnimationFrame(() => {
+      updateLayout()
+      jumpLocked = false
+    })
+  } else if (includeCenteredClones && activeIndex === total + 1) {
+    jumpLocked = true
+    scrollToCard(1)
+    requestAnimationFrame(() => {
+      updateLayout()
+      jumpLocked = false
+    })
+  } else if (scrollLeft <= 2) {
+    jumpLocked = true
+    scrollToCard(total)
+    requestAnimationFrame(() => {
+      updateLayout()
+      jumpLocked = false
+    })
   } else if (scrollLeft >= maxScroll - 2) {
-    jumpLocked = true; scrollToCard(1)
-    requestAnimationFrame(() => { jumpLocked = false })
+    jumpLocked = true
+    scrollToCard(1)
+    requestAnimationFrame(() => {
+      updateLayout()
+      jumpLocked = false
+    })
   }
 }
 
@@ -95,7 +127,7 @@ const scheduleLayout = () => {
 const goToStep = (step: number) => {
   if (props.projects.length <= 1) return
   scrollToCard(centeredIndex() + step, true)
-  setTimeout(scheduleLayout, 350)
+  updateLayoutAfterScroll(380)
 }
 
 // ── scroll snap (quand pas en drag) ──────────────────────────────────────────
@@ -105,7 +137,7 @@ const onScroll = () => {
   clearTimeout(scrollEndTimer)
   scrollEndTimer = window.setTimeout(() => {
     scrollToCard(centeredIndex(), true)
-    setTimeout(updateLayout, 350)
+    updateLayoutAfterScroll(380)
   }, 80)
 }
 
@@ -146,7 +178,7 @@ const endDrag = () => {
 
   if (dragMoved) {
     scrollToCard(centeredIndex(), true)
-    setTimeout(updateLayout, 350)
+    updateLayoutAfterScroll(380)
   }
 
   // On reset dragActive APRÈS un tick pour que le click event
