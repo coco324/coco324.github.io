@@ -232,9 +232,57 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
                 </div>
               </section>
 
+              <section v-if="content.secondActivity" class="reveal-item content-block" style="--delay: 0.27s">
+                <div class="section-label">
+                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">{{ content.secondActivity.title }}</span>
+                  <div class="section-line"></div>
+                </div>
+                <div class="mt-6 space-y-6">
+                  <!-- Three columns for Docker, Kubernetes, GitLab CI/CD -->
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div
+                      v-for="section in content.secondActivity.sections"
+                      :key="section.title"
+                      class="activity-card rounded-xl border border-white/8 bg-gradient-to-br from-white/5 to-white/2 p-4"
+                    >
+                      <div class="rounded-lg overflow-hidden mb-4">
+                        <div
+                          class="h-10 flex items-center justify-center font-mono text-sm font-bold text-white tracking-widest"
+                          :class="section.title === 'Docker' ? 'bg-blue-900/60 border-b border-blue-500/30' : section.title === 'Kubernetes' ? 'bg-cyan-900/60 border-b border-cyan-500/30' : 'bg-amber-900/60 border-b border-amber-500/30'"
+                        >
+                          {{ section.title }}
+                        </div>
+                      </div>
+                      <ul class="space-y-3">
+                        <li
+                          v-for="(item, i) in section.items"
+                          :key="i"
+                          class="flex items-start gap-2.5"
+                        >
+                          <span class="text-[#2ecc71] mt-1">•</span>
+                          <span class="font-mono text-xs text-white/75 leading-5">{{ item }}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Release Job Section -->
+                  <div v-if="content.secondActivity.releaseJob" class="rounded-lg border border-white/8 bg-gradient-to-br from-[#1e1e2e] to-[#0a0e27] p-4">
+                    <div class="flex items-start gap-3">
+                      <div class="flex-shrink-0">
+                        <p class="font-mono text-[10px] tracking-[0.2em] text-amber-400 font-bold uppercase">Job de Release</p>
+                      </div>
+                    </div>
+                    <p class="font-mono text-xs text-white/70 mt-3 leading-6">
+                      {{ content.secondActivity.releaseJob }}
+                    </p>
+                  </div>
+                </div>
+              </section>
+
               <section class="reveal-item content-block" style="--delay: 0.3s">
                 <div class="section-label">
-                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">{{ content.title === 'GitlabEventsHook' ? '05 — difficultés' : '04 — difficultés' }}</span>
+                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">06 — difficultés</span>
                   <div class="section-line"></div>
                 </div>
                 <p class="font-mono text-sm leading-7 text-white/65 mt-3">
@@ -244,7 +292,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
 
               <section class="reveal-item content-block" style="--delay: 0.3s">
                 <div class="section-label">
-                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">{{ content.title === 'GitlabEventsHook' ? '06 — compétences' : '05 — compétences' }}</span>
+                  <span class="font-mono text-[10px] tracking-[0.35em] text-[#2ecc71]/60 uppercase">07 — compétences</span>
                   <div class="section-line"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">

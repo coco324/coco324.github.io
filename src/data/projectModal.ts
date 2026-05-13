@@ -10,6 +10,15 @@ export interface ProjectModalCompetence {
   label: string
 }
 
+export interface SecondActivity {
+  title: string
+  sections: {
+    title: string
+    items: string[]
+  }[]
+  releaseJob?: string
+}
+
 export interface ProjectModalContent {
   title: string
   image: string
@@ -21,6 +30,7 @@ export interface ProjectModalContent {
   difficulty: string
   stats: ProjectModalStat[]
   competencies: ProjectModalCompetence[]
+  secondActivity?: SecondActivity
 }
 
 export const projectModalData: Record<string, ProjectModalContent> = {
@@ -42,10 +52,9 @@ export const projectModalData: Record<string, ProjectModalContent> = {
       { label: 'Stack', value: 'TypeScript / Chart.js' },
     ],
     competencies: [
-      { code: '', label: 'Déployer un service' },
-      { code: '', label: 'Mettre en place son environnement dapprentissage personnel' },
-      { code: '', label: 'Planifier les activités' },
-      { code: '', label: 'Gérer des sauvegardes' },
+      { code: '', label: 'Gérer le patrimoine informatique' },
+      { code: '', label: 'Mettre à disposition des utilisateurs un service informatique' },
+      { code: '', label: 'Organiser son développement professionnel' },
     ],
   },
   GitlabEventsHook: {
@@ -68,12 +77,42 @@ export const projectModalData: Record<string, ProjectModalContent> = {
       { label: 'Domaine', value: 'Software Engineering Platform' },
     ],
     competencies: [
-      { code: '', label: 'Gérer des sauvegardes' },
-      { code: '', label: 'Participer à lévolution dun site Web exploitant les données de lorganisation' },
-      { code: '', label: 'Planifier les activités' },
-      { code: '', label: 'Réaliser les tests dintégration et dacceptation dun service' },
-      { code: '', label: 'Déployer un service' },
+      { code: '', label: 'Gérer le patrimoine informatique' },
+      { code: '', label: 'Répondre aux incidents et aux demandes d\'assistance et d\'évolution' },
+      { code: '', label: 'Développer la présence en ligne de l\'organisation' },
+      { code: '', label: 'Travailler en mode projet' },
+      { code: '', label: 'Mettre à disposition des utilisateurs un service informatique' },
     ],
+    secondActivity: {
+      title: 'Seconde Activité — CI/CD & DevOps',
+      sections: [
+        {
+          title: 'Docker',
+          items: [
+            'Conteneurisation des applications',
+            'Dockerfile pour construire les images',
+            'Isolation et portabilité',
+          ],
+        },
+        {
+          title: 'Kubernetes',
+          items: [
+            'Orchestration des conteneurs',
+            'Gestion du déploiement & scaling',
+            'Fichiers YAML = état désiré',
+          ],
+        },
+        {
+          title: 'GitLab CI/CD',
+          items: [
+            'Pipeline déclenché au push',
+            'Build → Image → Artifactory',
+            'Déploiement via kubectl apply',
+          ],
+        },
+      ],
+      releaseJob: '1) Passage SNAPSHOT → Release (ex : 1.0.0)  2) Tag Git automatique  3) Incrémentation vers prochaine SNAPSHOT',
+    },
   },
 }
 
