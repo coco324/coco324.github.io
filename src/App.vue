@@ -28,7 +28,11 @@ export default defineComponent({
       favorisProject,
       modalOpen: false,
       modalProject: null,
+      readabilityMode: false,
     }
+  },
+  created() {
+    this.readabilityMode = localStorage.getItem('readability-mode') === 'true'
   },
   computed: {
     modalContent() {
@@ -36,6 +40,10 @@ export default defineComponent({
     },
   },
   methods: {
+    toggleReadability() {
+      this.readabilityMode = !this.readabilityMode
+      localStorage.setItem('readability-mode', String(this.readabilityMode))
+    },
     openFavorite(project: any, ev: MouseEvent) {
       const target = ev.target as HTMLElement | null
       if (target && typeof target.closest === 'function' && target.closest('a')) return
@@ -51,7 +59,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="h-screen overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden scroll-smooth scroll-pt-24 bg-[#0d0d0d] text-white font-sans relative">
+  <div
+    class="h-screen overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden scroll-smooth scroll-pt-24 bg-[#0d0d0d] text-white font-sans relative"
+    :class="{ 'readability-mode': readabilityMode }"
+  >
     <div class="relative z-10">
       <!-- NAV -->
       <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-4 bg-[#0d0d0d]/90 backdrop-blur border-b border-[#1e1e1e]">
@@ -59,7 +70,14 @@ export default defineComponent({
           <span class="font-extrabold text-lg tracking-tight">
             C<span class="text-[#2ecc71]">A</span>
           </span>
-          <button class="flex items-center gap-1.5 px-2 py-1.5 text-[#555] hover:text-[#2ecc71] transition-colors rounded" title="Augmenter la lisibilité du texte">
+          <button
+            type="button"
+            class="flex items-center gap-1.5 px-2 py-1.5 text-[#555] hover:text-[#2ecc71] transition-colors rounded"
+            :class="readabilityMode ? 'text-[#2ecc71]' : 'text-[#555]'"
+            :title="readabilityMode ? 'Désactiver le mode lisibilité' : 'Augmenter la lisibilité du texte'"
+            :aria-pressed="readabilityMode"
+            @click="toggleReadability"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
               <circle cx="12" cy="12" r="3"></circle>

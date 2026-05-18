@@ -1,1 +1,52 @@
 @import "tailwindcss";
+
+.readability-mode {
+	color: #f3f4f6;
+	background: #101010;
+}
+
+.readability-mode .text-\[\#333\],
+.readability-mode .text-\[\#444\],
+.readability-mode .text-\[\#555\],
+.readability-mode .text-\[\#666\],
+.readability-mode .text-\[\#777\],
+.readability-mode .text-\[\#888\],
+.readability-mode .text-\[\#999\],
+.readability-mode .text-\[\#aaa\] {
+	color: #e5e7eb !important;
+}
+
+.readability-mode .bg-\[\#0d0d0d\],
+.readability-mode .bg-\[\#161616\] {
+	background-color: #171717 !important;
+}
+
+.readability-mode .border-\[\#1a1a1a\],
+.readability-mode .border-\[\#1e1e1e\],
+.readability-mode .border-\[\#262626\] {
+	border-color: #404040 !important;
+}
+
+.readability-mode .text-\[\#444\] {
+	color: #f9fafb !important;
+}
+
+.readability-mode .text-\[\#555\] {
+	color: #f3f4f6 !important;
+}
+
+.readability-mode .text-\[\#666\] {
+	color: #e5e7eb !important;
+}
+
+.readability-mode .text-\[\#888\] {
+	color: #f3f4f6 !important;
+}
+
+.readability-mode .text-\[\#aaa\] {
+	color: #f8fafc !important;
+}
+
+.readability-mode :is(p, span, li, a, strong, small, footer) {
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+}
