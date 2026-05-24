@@ -136,10 +136,10 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
                   <div
                     v-for="(item, i) in content.realization"
                     :key="i"
-                    class="tech-card rounded-xl border border-white/8 bg-white/2 p-4"
+                    class="tech-card rounded-xl border border-white/8 bg-white/2 p-3"
                   >
-                    <p class="font-mono text-[9px] tracking-widest text-[#2ecc71]/50 uppercase">Point {{ i + 1 }}</p>
-                    <p class="font-mono text-xs text-white/75 mt-2 leading-5">{{ item }}</p>
+                    <p class="font-mono text-[8px] tracking-widest text-[#2ecc71]/50 uppercase">Point {{ i + 1 }}</p>
+                    <p class="font-mono text-[11px] text-white/75 mt-1.5 leading-4.5">{{ item }}</p>
                   </div>
                 </div>
               </section>

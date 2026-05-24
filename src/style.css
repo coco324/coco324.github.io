@@ -50,3 +50,106 @@
 .readability-mode :is(p, span, li, a, strong, small, footer) {
 	text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 }
+
+.readability-mode .modal-card {
+	background: #111813 !important;
+	border-color: rgba(46, 204, 113, 0.45) !important;
+	box-shadow:
+		0 0 0 1px rgba(46, 204, 113, 0.14) inset,
+		0 40px 120px rgba(0, 0, 0, 0.82),
+		0 0 110px rgba(46, 204, 113, 0.12) !important;
+}
+
+.readability-mode .modal-card .modal-header {
+	background: rgba(46, 204, 113, 0.08) !important;
+}
+
+.readability-mode .modal-card .scanlines,
+.readability-mode .modal-card .grid-overlay {
+	opacity: 0.14 !important;
+}
+
+.readability-mode .modal-card .reveal-item {
+	opacity: 1 !important;
+	transform: none !important;
+	animation: none !important;
+}
+
+.readability-mode .modal-card .modal-left,
+.readability-mode .modal-card .modal-right {
+	background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.readability-mode .modal-card .modal-left {
+	border-right-color: rgba(46, 204, 113, 0.18) !important;
+}
+
+.readability-mode .modal-card :is(p, li) {
+	color: #f3f4f6 !important;
+	font-size: 1.02rem !important;
+	line-height: 1.9 !important;
+}
+
+.readability-mode .modal-card :is(.font-mono.text-xs, .font-mono.text-sm) {
+	color: #f8fafc !important;
+}
+
+.readability-mode .modal-card :is(.font-mono.text-[10px], .font-mono.text-[9px]) {
+	font-size: 0.8rem !important;
+	letter-spacing: 0.2em !important;
+	color: rgba(167, 243, 208, 0.92) !important;
+}
+
+.readability-mode .modal-card h2 {
+	font-size: 2.1rem !important;
+	line-height: 1.15 !important;
+}
+
+.readability-mode .modal-card .modal-right section > p,
+.readability-mode .modal-card .modal-left .reveal-item > p:last-of-type {
+	font-size: 1rem !important;
+	line-height: 1.95 !important;
+}
+
+.readability-mode .modal-card .text-white\/30 {
+	color: rgba(167, 243, 208, 0.8) !important;
+}
+
+.readability-mode .modal-card .text-white\/60,
+.readability-mode .modal-card .text-white\/65,
+.readability-mode .modal-card .text-white\/70,
+.readability-mode .modal-card .text-white\/75,
+.readability-mode .modal-card .text-white\/80 {
+	color: rgba(243, 244, 246, 0.98) !important;
+}
+
+.readability-mode .modal-card .section-label span {
+	color: rgba(125, 255, 171, 0.82) !important;
+}
+
+.readability-mode .modal-card .section-line {
+	background: linear-gradient(90deg, rgba(46, 204, 113, 0.65), transparent) !important;
+}
+
+.readability-mode .modal-card .tech-card,
+.readability-mode .modal-card .stat-cell,
+.readability-mode .modal-card .activity-card {
+	background: rgba(255, 255, 255, 0.07) !important;
+	border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+.readability-mode .modal-card .stat-cell p:last-child,
+.readability-mode .modal-card .tech-card p:last-child {
+	color: #ffffff !important;
+}
+
+.readability-mode .modal-card .cta-btn {
+	font-size: 1rem !important;
+	letter-spacing: 0.25em !important;
+	padding-top: 1rem !important;
+	padding-bottom: 1rem !important;
+}
+
+.readability-mode .line-clamp-3 {
+	-webkit-line-clamp: 5 !important;
+}

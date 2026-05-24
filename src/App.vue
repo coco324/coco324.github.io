@@ -33,6 +33,10 @@ export default defineComponent({
   },
   created() {
     this.readabilityMode = localStorage.getItem('readability-mode') === 'true'
+    this.syncReadabilityMode()
+  },
+  mounted() {
+    this.syncReadabilityMode()
   },
   computed: {
     modalContent() {
@@ -40,9 +44,14 @@ export default defineComponent({
     },
   },
   methods: {
+    syncReadabilityMode() {
+      document.body.classList.toggle('readability-mode', this.readabilityMode)
+      document.documentElement.classList.toggle('readability-mode', this.readabilityMode)
+    },
     toggleReadability() {
       this.readabilityMode = !this.readabilityMode
       localStorage.setItem('readability-mode', String(this.readabilityMode))
+      this.syncReadabilityMode()
     },
     openFavorite(project: any, ev: MouseEvent) {
       const target = ev.target as HTMLElement | null
@@ -74,8 +83,9 @@ export default defineComponent({
             type="button"
             class="flex items-center gap-1.5 px-2 py-1.5 text-[#555] hover:text-[#2ecc71] transition-colors rounded"
             :class="readabilityMode ? 'text-[#2ecc71]' : 'text-[#555]'"
-            :title="readabilityMode ? 'Désactiver le mode lisibilité' : 'Augmenter la lisibilité du texte'"
+            :title="readabilityMode ? 'Désactiver la lisibilité des projets' : 'Augmenter la lisibilité des détails des projets'"
             :aria-pressed="readabilityMode"
+            :aria-label="readabilityMode ? 'Désactiver la lisibilité des projets' : 'Augmenter la lisibilité des détails des projets'"
             @click="toggleReadability"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
