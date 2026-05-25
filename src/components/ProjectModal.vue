@@ -159,19 +159,24 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
                       <text x="60" y="45" text-anchor="middle" class="text-[12px] fill-white font-bold" font-family="monospace">GitLab</text>
                       
                       <!-- Arrow -->
-                      <path d="M 110 40 L 130 40" stroke="#ff6b6b" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+                      <path d="M 110 40 L 120 40" stroke="#ff6b6b" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+                      
+                      <!-- Filehooks -->
+                      <rect x="125" y="10" width="80" height="60" rx="4" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+                      <text x="165" y="40" text-anchor="middle" class="text-[11px] fill-white font-bold" font-family="monospace">Filehooks</text>
                       
                       <!-- Webhooks -->
-                      <rect x="140" y="10" width="100" height="60" rx="4" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
-                      <text x="190" y="35" text-anchor="middle" class="text-[11px] fill-white font-bold" font-family="monospace">Webhooks</text>
-                      <text x="190" y="55" text-anchor="middle" class="text-[9px] fill-orange-300" font-family="monospace">HTTPS</text>
+                      <path d="M 205 40 L 225 40" stroke="#ff6b6b" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+                      <rect x="230" y="10" width="100" height="60" rx="4" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+                      <text x="280" y="35" text-anchor="middle" class="text-[11px] fill-white font-bold" font-family="monospace">Webhooks</text>
+                      <text x="280" y="55" text-anchor="middle" class="text-[9px] fill-orange-300" font-family="monospace">HTTPS</text>
                       
                       <!-- Arrow -->
-                      <path d="M 250 40 L 270 40" stroke="#ff6b6b" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+                      <path d="M 330 40 L 350 40" stroke="#ff6b6b" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
                       
                       <!-- Backend -->
-                      <rect x="280" y="10" width="80" height="60" rx="4" fill="#1e3a1f" stroke="#ff6b6b" stroke-width="2"/>
-                      <text x="320" y="45" text-anchor="middle" class="text-[12px] fill-white font-bold" font-family="monospace">Backend</text>
+                      <rect x="355" y="10" width="80" height="60" rx="4" fill="#1e3a1f" stroke="#ff6b6b" stroke-width="2"/>
+                      <text x="395" y="45" text-anchor="middle" class="text-[12px] fill-white font-bold" font-family="monospace">Backend</text>
                       
                       <!-- Marker -->
                       <defs>
